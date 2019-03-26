@@ -1,2 +1,0 @@
-# sendhalpomg
-HELP
