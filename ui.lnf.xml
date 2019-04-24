@@ -1,0 +1,6 @@
+<application>
+  <component name="UISettings">
+    <option name="ANIMATE_WINDOWS" value="false" />
+    <option name="SHOW_MEMORY_INDICATOR" value="true" />
+  </component>
+</application>
