@@ -3,5 +3,8 @@
     <account id="7d4dc444-69fe-4599-ae01-732b634c388a" name="thunderedge">
       <server host="github.com" />
     </account>
+    <account id="a01fbd72-3f42-44a1-b76b-63ffe4cbd8d5" name="cyborgrooster">
+      <server host="github.com" />
+    </account>
   </component>
 </application>
