@@ -1,7 +1,0 @@
-<application>
-  <component name="UISettings">
-    <option name="ANIMATE_WINDOWS" value="false" />
-    <option name="SHOW_MEMORY_INDICATOR" value="true" />
-    <option name="SORT_LOOKUP_ELEMENTS_LEXICOGRAPHICALLY" value="true" />
-  </component>
-</application>
