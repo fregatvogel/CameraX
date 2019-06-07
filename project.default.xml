@@ -1,9 +1,0 @@
-<application>
-  <component name="ProjectManager">
-    <defaultProject>
-      <component name="PropertiesComponent">
-        <property name="android.sdk.path" value="F:/SDK" />
-      </component>
-    </defaultProject>
-  </component>
-</application>
