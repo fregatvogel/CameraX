@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         preview.setOnPreviewOutputUpdateListener(
                 new Preview.OnPreviewOutputUpdateListener() {
-                    //to update the surface texture we  have to destroy it first then re-add it
+                    //to update the surface texture we have to destroy it first, then re-add it
                     @Override
                     public void onUpdated(Preview.PreviewOutput output){
                         ViewGroup parent = (ViewGroup) txView.getParent();
@@ -83,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
         /* image capture */
 
         //config obj, selected capture mode
-        ImageCaptureConfig imgCConfig = new ImageCaptureConfig.Builder().setCaptureMode(ImageCapture.CaptureMode.MIN_LATENCY)
+        ImageCaptureConfig imgCapConfig = new ImageCaptureConfig.Builder().setCaptureMode(ImageCapture.CaptureMode.MIN_LATENCY)
                 .setTargetRotation(getWindowManager().getDefaultDisplay().getRotation()).build();
-        final ImageCapture imgCap = new ImageCapture(imgCConfig);
+        final ImageCapture imgCap = new ImageCapture(imgCapConfig);
 
         findViewById(R.id.capture_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,14 +128,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateTransform(){
-        //compensates the changes in orientation for the viewfinder, bc the rest of the layout stays in portrait mode.
-        //methinks :thonk:
+        /*
+        * compensates the changes in orientation for the viewfinder, bc the rest of the layout stays in portrait mode.
+        * methinks :thonk:
+        * imgCap does this already, this class can be commented out or be used to optimise the preview
+        */
         Matrix mx = new Matrix();
         float w = txView.getMeasuredWidth();
         float h = txView.getMeasuredHeight();
 
-        float cX = w / 2f; //calc centre of the viewfinder
-        float cY = h / 2f;
+        float centreX = w / 2f; //calc centre of the viewfinder
+        float centreY = h / 2f;
 
         int rotationDgr;
         int rotation = (int)txView.getRotation(); //cast to int bc switches don't like floats
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
         }
 
-        mx.postRotate((float)rotationDgr, cX, cY);
+        mx.postRotate((float)rotationDgr, centreX, centreY);
         txView.setTransform(mx); //apply transformations to textureview
     }
 
