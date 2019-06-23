@@ -35,7 +35,7 @@ import java.io.File;
 public class MainActivity extends AppCompatActivity {
 
     private int REQUEST_CODE_PERMISSIONS = 10; //arbitrary number, can be changed accordingly
-    private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA","android.permission.WRITE_EXTERNAL_STORAGE"};
+    private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA","android.permission.WRITE_EXTERNAL_STORAGE"};}; //array w/ permissions from manifest
     TextureView txView;
 
     @Override
