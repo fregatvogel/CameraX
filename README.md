@@ -1,2 +1,3 @@
 # CameraX
-https://codelabs.developers.google.com/codelabs/camerax-getting-started
+
+https://developer.android.com/training/camerax
